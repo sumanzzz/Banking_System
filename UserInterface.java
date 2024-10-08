@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UserInterface {
-    public void CreateAndShowGUI(){
+    public void CreateAndShowGUI(Main_File mainFile){
         JFrame frame= new JFrame("Banking System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,300);
@@ -54,6 +54,7 @@ public class UserInterface {
                 String Deposit = deposit.getText();
 
                 JOptionPane.showMessageDialog(frame, "Account Created:"+Name+"\nAccount Number:"+Number+"\nInitial Deposit:"+Deposit);
+                mainFile.handleAccountCreation( Name, Number, Deposit,  frame);
             }
         });
 
